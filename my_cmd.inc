@@ -235,6 +235,10 @@ stock GetCommandAlias(cmdid, results[], size = sizeof results)
 		}
 	}
 
+	for (new i = totalAlias; i < size; i++) {
+		results[i] = INVALID_COMMAND_ID;
+	}
+
 	return totalAlias;
 }
 
