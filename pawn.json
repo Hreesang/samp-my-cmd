@@ -1,0 +1,23 @@
+{
+	"user": "Hreesang",
+	"repo": "samp-my-cmd",
+	"entry": "test.pwn",
+	"output": "gamemodes/test.amx",
+	"dependencies": [
+		"Zeex/amx_assembly#72677755a08eaf9919762fcc9bb9f0b2c01fc81d",
+		"oscar-broman/md-sort#b470d0332aca1f2217e9545a19b1b960df6bc124",
+		"Y-Less/sscanf:v2.13.8"
+	],
+	"dev_dependencies": [
+		"Y-Less/samp-plugin-crashdetect:v4.22",
+		"ScavengeSurvive/test-boilerplate#3c569e0e4293fc1d46286146cb9ee4bb5273fd10",
+		"pawn-lang/YSI-Includes#f0f51cd9fc41ed2c7af49833ead7cd3ab7367b50"
+	],
+	"local": true,
+	"runtime": {
+		"version": "0.3.DL",
+		"mode": "server",
+		"rcon_password": "none",
+		"port": 7777
+	}
+}
