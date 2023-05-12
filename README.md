@@ -158,56 +158,56 @@ If you are not using `OnPlayerCommandPerformed` then the return value of the com
 
 #### GetTotalCommands
 >* **Parameters:**
->       *
+>* *
 >* **Returns:**
->       * total created commands
+>* * total created commands
 >* **Remarks:**
->       Returns the total of created commands in the script.
+>* * Returns the total of created commands in the script.
 
 #### GetCommandID
 >* **Parameters:**
->       * `const cmd[]`: command name
+>* * `const cmd[]`: command name
 >* **Returns:**
->       * command ID of the specified command name
+>* * command ID of the specified command name
 >* **Remarks:**
->       Returns the ID of specified command name or `INVALID_COMMAND_ID` if not exists
+>* * Returns the ID of specified command name or `INVALID_COMMAND_ID` if not exists
 
 #### IsValidCommand
 >* **Parameters:**
->       * `cmdid`: command ID
+>* * `cmdid`: command ID
 >* **Returns:**
->       * `true` if command exists otherwise `false`
+>* * `true` if command exists otherwise `false`
 >* **Remarks:**
->       
+>* * 
 
 #### GetCommandName
 >* **Parameters:**
->       * `cmdid`: command ID
->       * `output[]`: array where the name will be passed to
->       * `len = sizeof output`: length of the output array
+>* * `cmdid`: command ID
+>* * `output[]`: array where the name will be passed to
+>* * `len = sizeof output`: length of the output array
 >* **Returns:**
->       * `false` if command not exists otherwise `true`
+>* * `false` if command not exists otherwise `true`
 >* **Remarks:**
->       Gets specified command ID's name
+>* * Gets specified command ID's name
 
 #### GetCommandFunctionName
 >* **Parameters:**
->       * `cmdid`: command ID
->       * `output[]`: array where the function name will be passed to
->       * `len = sizeof output`: length of the output array
+>* * `cmdid`: command ID
+>* * `output[]`: array where the function name will be passed to
+>* * `len = sizeof output`: length of the output array
 >* **Returns:**
->       * `false` if command not exists otherwise `true`
+>* * `false` if command not exists otherwise `true`
 >* **Remarks:**
->       Gets the specified command ID's function name. It's a callback name that would be executed when a player types the command ID's name.
+>* * Gets the specified command ID's function name. It's a callback name that would be executed when a player types the command ID's name.
 
 #### AddCommandAlias
 >* **Parameters:**
->       * `cmdid`: command ID
->       * `...`: strings that will be the aliases of the command ID
+>* * `cmdid`: command ID
+>* * `...`: strings that will be the aliases of the command ID
 >* **Returns:**
->       * `false` if command not exists otherwise `true`
+>* * `false` if command not exists otherwise `true`
 >* **Remarks:**
->       Adds alias(es) for the specified command ID's
+>* * Adds alias(es) for the specified command ID's
 
 ```c
 public OnCommandsInit()
@@ -221,21 +221,21 @@ public OnCommandsInit()
 
 #### IsCommandAlias
 >* **Parameters:**
->       * `cmdid`: command ID
+>* * `cmdid`: command ID
 >* **Returns:**
->       * `true` if an alias otherwise `false` if not exists or not an alias
+>* * `true` if an alias otherwise `false` if not exists or not an alias
 >* **Remarks:**
->       
+>* * 
 
 #### GetCommandAlias
 >* **Parameters:**
->       * `cmdid`: command ID
->       * `results`: array to store the command ID's alias(es)
->       * `size = sizeof results`: size of the results array
+>* * `cmdid`: command ID
+>* * `results`: array to store the command ID's alias(es)
+>* * `size = sizeof results`: size of the results array
 >* **Returns:**
->       * numbers of the aliases
+>* * numbers of the aliases
 >* **Remarks:**
->       Gets specified command ID's aliases
+>* * Gets specified command ID's aliases
 
 ```c
 public OnCommandsInit()
@@ -257,14 +257,14 @@ public OnCommandsInit()
 
 #### EmulateCommand
 >* **Parameters:**
->       * `playerid`: playerid who will execute the command
->       * `const cmd[]`: command name that'll be run if `cmdid` is `INVALID_COMMAND_ID`
->       * `const params[] = ""`: command parameters
->       * `cmdid = INVALID_COMMAND_ID`: command ID that'll be run (more prioritized than `const cmd[]` parameter)
+>* * `playerid`: playerid who will execute the command
+>* * `const cmd[]`: command name that'll be run if `cmdid` is `INVALID_COMMAND_ID`
+>* * `const params[] = ""`: command parameters
+>* * `cmdid = INVALID_COMMAND_ID`: command ID that'll be run (more prioritized than `const cmd[]` parameter)
 >* **Returns:**
->       * `false` or `true` that depends on how you handle the return for valid and invalid commands on `OnPlayerCommandPerformed`.
+>* * `false` or `true` that depends on how you handle the return for valid and invalid commands on `OnPlayerCommandPerformed`.
 >* **Remarks:**
->       Force-run a command for the specified player
+>* * Force-run a command for the specified player
 
 ## Testing
 
