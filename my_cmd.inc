@@ -387,7 +387,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	}
 
 	if (!OnPlayerCommandReceived(playerid, cmdtext)) {
-		return 0;
+		return 1;
 	}
 
 	new cmd[MAX_COMMAND_NAME];
@@ -450,4 +450,4 @@ CHAIN_FORWARD:MYC_OnPlayerCommandReceived(playerid, cmdtext[]) = 1;
 	#define _ALS_OnPlayerCommandPerformed
 #endif
 #define OnPlayerCommandPerformed(%0) CHAIN_PUBLIC:MYC_OnPlayerCommandPerformed(%0)
-CHAIN_FORWARD:MYC_OnPlayerCommandPerformed(playerid, cmdtext[], success) = 0;
+CHAIN_FORWARD:MYC_OnPlayerCommandPerformed(playerid, cmdtext[], success) = 1;
