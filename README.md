@@ -200,6 +200,15 @@ If you are not using `OnPlayerCommandPerformed` then the return value of the com
 >* **Remarks:**
 >* * Gets the specified command ID's function name. It's a callback name that would be executed when a player types the command ID's name.
 
+#### SetCommandFunctionName
+>* **Parameters:**
+>* * `cmdid`: command ID
+>* * `const funcname[]`: callback name that will be triggered when executing the command
+>* **Returns:**
+>* * `false` if command not exists otherwise `true`
+>* **Remarks:**
+>* *
+
 #### AddCommandAlias
 >* **Parameters:**
 >* * `cmdid`: command ID

@@ -176,6 +176,18 @@ stock bool:GetCommandFunctionName(cmdid, output[], len = sizeof output)
 	return true;
 }
 
+stock bool:SetCommandFunctionName(cmdid, const funcname[])
+{
+	if (!IsValidCommand(cmdid)) {
+		return false;
+	}
+
+	gs_commandsInfo[cmdid][E_CMD_FUNC_NAME][0] = EOS;
+	strcat(gs_commandsInfo[cmdid][E_CMD_FUNC_NAME], funcname, MAX_COMMAND_FUNC_NAME);
+
+	return true;
+}
+
 stock bool:AddCommandAlias(cmdid, ...)
 {
 	if (!IsValidCommand(cmdid)) {
@@ -312,24 +324,27 @@ static MYC_InitializeCommands()
 	}
 
 	new const aliasFuncPrefix[] = "altc_";
-	new const initFuncPrefix[] = "cint_";
-	
 	for (new i = 0; i < gs_totalCommands; i++) {
-		new funcName[MAX_COMMAND_FUNC_NAME];
-		
 		// Initialize command aliases...
+		new funcName[MAX_COMMAND_FUNC_NAME];
 		strcat(funcName, aliasFuncPrefix);
 		strcat(funcName, gs_commandsInfo[i][E_CMD_NAME]);
 		CallLocalFunction(funcName, "");
+	}
 
-		// Call command init...
-		funcName[0] = EOS;
+	// Sort all the commands...
+	MYC_SortCommands();
+
+	new const initFuncPrefix[] = "cint_";
+	for (new i = 0; i < gs_totalCommands; i++) {
+		// Call each command initialization...
+		// Doing this after the sort so the ID won't be rearranged again.
+		new funcName[MAX_COMMAND_FUNC_NAME];
 		strcat(funcName, initFuncPrefix);
 		strcat(funcName, gs_commandsInfo[i][E_CMD_NAME]);
 		CallLocalFunction(funcName, "i", i);
 	}
 
-	MYC_SortCommands();
 	CallLocalFunction("OnCommandsInit", "");
 }
 
